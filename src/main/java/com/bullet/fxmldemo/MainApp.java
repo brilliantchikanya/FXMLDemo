@@ -11,12 +11,12 @@ import java.io.IOException;
 public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxmls/login.fxml"));
-        //loader.load()
-        Model.getInstance().getViewFactory().createStage(loader);
+        //FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxmls/login.fxml"));
+        Model.getInstance().getViewFactory().showLoginWindow();
 
 
     }
+
 
     public static void main(String[] args) {
         launch();

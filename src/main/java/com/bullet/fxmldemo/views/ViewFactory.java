@@ -1,5 +1,6 @@
 package com.bullet.fxmldemo.views;
 
+import com.bullet.fxmldemo.LoginController;
 import com.bullet.fxmldemo.controllers.MainWindowController;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -19,6 +20,7 @@ private final ObjectProperty<MenuOptions> selectedMenuOption;
 /*******    VIEWS       ******/
     private AnchorPane dashBoardView;
     private AnchorPane menuView;
+    private AnchorPane employeesView;
 
 
 /*******    CONSTRUCTOR */
@@ -54,6 +56,13 @@ private final ObjectProperty<MenuOptions> selectedMenuOption;
         createStage(loader);
     }
 
+    public void showLoginWindow() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmls/login.fxml"));
+        //LoginController controller = new LoginController();
+        //loader.setController(controller);
+        createStage(loader);
+    }
+
     public void createStage(FXMLLoader loader) {
         Scene scene = null;
         try {
@@ -73,18 +82,30 @@ private final ObjectProperty<MenuOptions> selectedMenuOption;
 
     }
 
-    /***   */
-
+    /***    USER VIEWS      ******/
     public AnchorPane getDashBoardView() {
         if (dashBoardView == null) {
             try {
-                dashBoardView = new FXMLLoader(getClass().getResource("fxmls/dashboard.fxml")).load();
+                dashBoardView = new FXMLLoader(getClass().getResource("/fxmls/dashboard.fxml")).load();
             } catch (IOException e) {
                 e.printStackTrace();
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText(e.getMessage());
+                alert.show();
             }
         }
         return dashBoardView;
     }
 
+    public AnchorPane getEmployeesView() {
+        if (employeesView == null) {
+            try {
+                employeesView = new FXMLLoader(getClass().getResource("/fxmls/employees.fxml")).load();
 
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return employeesView;
+    }
 }

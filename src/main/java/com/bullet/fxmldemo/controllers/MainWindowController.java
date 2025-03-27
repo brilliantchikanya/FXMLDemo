@@ -20,7 +20,7 @@ public class MainWindowController implements Initializable {
                         {
                             switch (newVal) {
                                 case DASHBOARD -> main_window.setCenter(Model.getInstance().getViewFactory().getDashBoardView());
-                                //case EMPLOYEE -> main_window.setCenter(Model.getInstance().getViewFactory().getDashEmployeeView());
+                                case EMPLOYEE -> main_window.setCenter(Model.getInstance().getViewFactory().getEmployeesView());
                                 //case BENEFITS -> main_window.setCenter(Model.getInstance().getViewFactory().getDashBenefitsView());
                                 default -> main_window.setCenter(Model.getInstance().getViewFactory().getDashBoardView());
 
