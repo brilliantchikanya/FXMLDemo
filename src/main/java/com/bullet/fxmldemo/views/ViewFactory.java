@@ -1,8 +1,11 @@
 package com.bullet.fxmldemo.views;
 
 import com.bullet.fxmldemo.controllers.MainWindowController;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -10,8 +13,36 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 
 public class ViewFactory {
+
+private final ObjectProperty<MenuOptions> selectedMenuOption;
+
+/*******    VIEWS       ******/
     private AnchorPane dashBoardView;
     private AnchorPane menuView;
+
+
+/*******    CONSTRUCTOR */
+    public ViewFactory() {
+        this.selectedMenuOption = new SimpleObjectProperty<>();
+    }
+
+/*******    END CONSTRUCTOR */
+
+    /******     GETTERS AND SETTERS     ****/
+    public ObjectProperty<MenuOptions> getSelectedMenuOption() {
+        return selectedMenuOption;
+    }
+
+
+    public ObjectProperty<MenuOptions> selectedMenuOptionProperty() {
+        return selectedMenuOption;
+    }
+
+    //public
+
+    /******     END GETTERS AND SETTERS     ****/
+
+
 
 
     /****   */
@@ -29,7 +60,12 @@ public class ViewFactory {
             scene = new Scene(loader.load());
         } catch (IOException e) {
             e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Sorry, we cannot log you in at this moment");
+            alert.setContentText(e.getMessage());
+            alert.show();
         }
+
         Stage stage = new Stage(StageStyle.TRANSPARENT);
         stage.setScene(scene);
         stage.setTitle("PAYROLL APPLICATION");

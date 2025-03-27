@@ -4,21 +4,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-    <VBox prefHeight="280.0" prefWidth="380.0" style="-fx-background-color: lime;" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
-      <children>
-         <Label text="First" />
-      </children></VBox>
-    <VBox layoutX="20.0" layoutY="20.0" prefHeight="280.0" prefWidth="380.0" style="-fx-background-color: orange;" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
-      <children>
-         <Label text="Label" />
-      </children></VBox>
-    <VBox layoutX="420.0" layoutY="20.0" prefHeight="280.0" prefWidth="380.0" style="-fx-background-color: blue;" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
-      <children>
-         <Label text="Label" />
-      </children></VBox>
-    <VBox layoutX="420.0" layoutY="320.0" prefHeight="280.0" prefWidth="380.0" style="-fx-background-color: yellow;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
-      <children>
-         <Label text="Label" />
-      </children></VBox>
+<AnchorPane prefHeight="600.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/23.0.1">
+    <VBox prefHeight="280.0" prefWidth="380.0" style="-fx-background-color: lime;" AnchorPane.leftAnchor="10.0"
+          AnchorPane.topAnchor="10.0">
+        <Label text="First"/>
+    </VBox>
+    <VBox layoutX="20.0" layoutY="20.0" prefHeight="280.0" prefWidth="380.0" style="-fx-background-color: orange;"
+          AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+        <Label text="Label"/>
+    </VBox>
+    <VBox layoutX="420.0" layoutY="20.0" prefHeight="280.0" prefWidth="380.0" style="-fx-background-color: blue;"
+          AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+        <Label text="Label"/>
+    </VBox>
+    <VBox layoutX="420.0" layoutY="320.0" prefHeight="280.0" prefWidth="380.0" style="-fx-background-color: yellow;"
+          AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+        <Label text="Label"/>
+    </VBox>
 </AnchorPane>
